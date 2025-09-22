@@ -1,63 +1,45 @@
 # RAG-Research-Assistant-Ussing-LLM
 
-This repository provides a step-by-step guide to train YOLOv8 on a custom dataset for detecting license plates, which are not included in the default pretrained classes. It also explains how to set up and load an Anaconda environment with the required package versions using Jupyter Notebook.
+This repository implements a Retrieval-Augmented Generation (RAG) system for research paper analysis using a dual-model architecture. The system employs `all-MiniLM-L6-v2` for semantic text representation and Meta's `llama3.2` for response generation. The embedding model converts PDF content into vector embeddings enabling efficient semantic search, while the generative model synthesizes accurate answers based on the retrieved context.
 
-
+- **Local Execution**: Entire pipeline runs offline using Ollama and local models
+- **Academic Focus**: Optimized for research paper analysis and academic Q&A
 
 ## Environment Setup
 
-In the Anaconda prompt create a new environment with python 3.10
+Create an Anaconda environment using `python=3.10`. Navigate to the root folder of the project and install requeriments
 
 ```bash
-conda create -n env_name python=3.10
-```
-
-Then, activate the environment
-
-```bash
-conda activate env_name
-```
-Navigate to the root folder of the project and install the required packages to avoid compatibility issues:
-
-```bash
-pip install -r requirements.txt
+pip install -r requeriments.txt
 ```
 
 ## Install PyTORCH
-If your machine has a GPU compatible with CUDA, install the GPU versions:
+
+If your machine has a CUDA compatible GPU, install:
 
 ```bash
-pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu118
+pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cu126
 ```
-
-Otherwise, install the CPU versions:
+Otherwise, install the versions for CPU
 
 ```bash
-pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1
+pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0
 ```
 
-## Using the Environment in Jupyter
-Register the Anaconda environment `env_name` as a Jupyter kernel
+## Example of a Query
 
-```bash
-python -m ipykernel install --user --name=env_name --display-name "Kernel_Name"
-```
+Here we show the output of the model when we ask for "Noticias de cine"
 
-`--name` is the internal identifier
-
-`--display-name` is the name you will see in jupyter
-
-Once you open your Jupyter Notebook, select your kernel from the top-right corner:
+<img src="News.png" alt="News" width="900" />
 
 
 
-## Dataset
 
-The dataset used to train the model is available in Kaggle 
-[Car Plate Detection Dataset](https://www.kaggle.com/datasets/andrewmvd/car-plate-detection), 
 
-It contains 433 images with annotations in PASCAL VOC XML format. This repository includes the YOLO format (TXT) files with normalized coordinates. 
-Organize the dataset files in the following folder structure:
+
+
+
+
 
 ```
 root_directory/
