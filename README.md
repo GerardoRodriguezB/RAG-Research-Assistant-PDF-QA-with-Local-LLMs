@@ -43,9 +43,7 @@ root_directory/
 
 ## Usage
 
-Run the file `RAG_load.ipynb` to process the PDF files the first time, and then every time you want to use the assistant use `RAG-assistant.ipynb`.
-
-
+Run RAG_load.ipynb once to process the PDF files and build the vector database. Afterwards, use RAG_assistant.ipynb whenever you want to query the assistant.
 
 ## Example of a Query
 
