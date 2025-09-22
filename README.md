@@ -1,11 +1,10 @@
-# RAG-Research-Assistant-Ussing-LLM
+# RAG-Research-Assistant-PDF-Q&A-with-Local-LLMs 
 
-This repository implements a Retrieval-Augmented Generation (RAG) system for research paper Q&A using a dual-model architecture. The pipeline employs `all-MiniLM-L6-v2` for semantic text representation and Meta's `llama3.2` for response generation. The embedding model converts PDF content into vector embeddings to enable efficient semantic search, while the generative model synthesizes accurate answers from retrieved context. A key advantage of this assistant is its complete offline operation using Ollama and local models.
-
+This repository implements a Retrieval-Augmented Generation (RAG) system for answering questions from research papers. It combines a dual-model architecture: all-MiniLM-L6-v2 for semantic search and Meta's llama3.2 (via Ollama) for response generation. The embedding model converts PDF content into vector embeddings to enable efficient semantic search, while the generative model synthesizes accurate answers from retrieved context. The system works fully offline, making it suitable for privacy-sensitive research.
 
 ## Environment Setup
 
-Create an Anaconda environment using `python=3.10`. Navigate to the root folder of the project and install requeriments
+Create an Anaconda environment using `python=3.10`. Navigate to the root folder of the project and install requirements
 
 ```bash
 pip install -r requeriments.txt
@@ -32,19 +31,19 @@ pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0
 
 ## Folder with the PDF Files
 
-In the following scheme it is shown a tree of folders. Create a folder named `papers` and put the PDF files inside.
+Create a folder named papers and place your PDF files inside. The following directory tree shows the expected project structure:
 
 ```
 root_directory/
-├── papers/
-├── vector_db/
-│   RAG_load.ipynb
-│   RAG_assistant.ipynb
+├── papers/                # Folder with your PDF files
+├── vector_db/             # Folder where embeddings and indexes will be stored
+│   RAG_load.ipynb         # Script to process PDFs and build the vector DB
+│   RAG_assistant.ipynb    # Script to query the assistant
 ```
 
 ## Usage
 
-Run the file `RAG_load.ipynb` to process the PDF files the first time, and then every time you wantr to use the assistant use `RAG-assistant.ipynb`.
+Run the file `RAG_load.ipynb` to process the PDF files the first time, and then every time you want to use the assistant use `RAG-assistant.ipynb`.
 
 
 
