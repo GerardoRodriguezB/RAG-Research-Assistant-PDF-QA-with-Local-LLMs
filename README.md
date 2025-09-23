@@ -1,5 +1,7 @@
 # RAG-Research-Assistant-PDF-Q&A-with-Local-LLMs 
 
+<img src="Models.png" alt="News" width="900" />
+
 This repository implements a Retrieval-Augmented Generation (RAG) system for answering questions from research papers. It combines a dual-model architecture: all-MiniLM-L6-v2 for semantic search and Meta's llama3.2 (via Ollama) for response generation. The embedding model converts PDF content into vector embeddings to enable efficient semantic search, while the generative model synthesizes accurate answers from retrieved context. The system works fully offline, making it suitable for privacy-sensitive research.
 
 ## Environment Setup
@@ -49,7 +51,7 @@ Run RAG_load.ipynb once to process the PDF files and build the vector database. 
 
 Here we show the output of the model when we ask for "Noticias de cine"
 
-<img src="News.png" alt="News" width="900" />
+<img src="Example.png" alt="News" width="900" />
 
 
 
